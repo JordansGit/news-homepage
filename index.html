@@ -5,56 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+
   <title>Frontend Mentor | News homepage</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <img class="logo" src="./assets/images/logo.svg">
+      <nav>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">New</a></li>
+          <li class="nav-item"><a href="#">Popular</a></li>
+          <li class="nav-item"><a href="#">Trending</a></li>
+          <li class="nav-item"><a href="#">Categories</a></li>
+        </ul>
+      </nav>  
+    </header>
+    
+    <img class="blog-post-feat-img feat-img-mobile" src="./assets/images/image-web-3-mobile.jpg">
+    <img class="blog-post-feat-img feat-img-desktop" src="./assets/images/image-web-3-desktop.jpg">
+    <h1 class="blog-post-feat-title">The Bright Future of Web 3.0?</h1>
+    <p class="blog-post-body">
+      We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+      But is it really fulfilling its promise?
+      <a href="#" class="read-more-btn">Read more</a>
+    </p>
 
-  Home
-  New
-  Popular
-  Trending
-  Categories
-
-  The Bright Future of Web 3.0?
-
-  We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-  But is it really fulfilling its promise?
-
-  Read more
-
-  New 
-
-  Hydrogen VS Electric Cars
-  Will hydrogen-fueled cars ever catch up to EVs?
-
-  The Downsides of AI Artistry
-  What are the possible adverse effects of on-demand AI image generation?
-
-  Is VC Funding Drying Up?
-  Private funding by VC firms is down 50% YOY. We take a look at what that means.
-
-  01
-  Reviving Retro PCs
-  What happens when old PCs are given modern upgrades?
-
-  02
-  Top 10 Laptops of 2022
-  Our best picks for various needs and budgets.
-
-  03
-  The Growth of Gaming
-  How the pandemic has sparked fresh opportunities.
+    <aside class="sidebar">
+      <h2 class="sidebar-title">New</h2>
+      <div class="sidebar-recent-post">
+        <h3 class="sidebar-post-title">Hydrogen VS Electric Cars</h3>
+        <p class="sidebar-post-body">
+          Will hydrogen-fueled cars ever catch up to EVs?
+        </p>
+      </div>
   
+      <div class="sidebar-recent-post">
+        <h3 class="sidebar-post-title">The Downsides of AI Artistry</h3>
+        <p class="sidebar-post-body">What are the possible adverse effects of on-demand AI image generation?</p>
+      </div>
+  
+      <div class="sidebar-recent-post">
+        <h3 class="sidebar-post-title">Is VC Funding Drying Up?</h3>
+        <p class="sidebar-post-body">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+      </div>
+    </aside>
+  
+    <article class="blog-post blog-post-1">
+      <img class="blog-post-img" src="./assets/images/image-retro-pcs.jpg">
+      <div class="blog-post-content">
+        <h2 class="blog-post-number">01</h2>
+        <h3 class="blog-post-title">Reviving Retro PCs</h3>
+        <p class="blog-post-body">What happens when old PCs are given modern upgrades?</p>  
+      </div>
+    </article>
+    
+    <article class="blog-post blog-post-2">
+      <img class="blog-post-img" src="./assets/images/image-top-laptops.jpg">
+      <div class="blog-post-content">
+        <h2 class="blog-post-number">02</h2>
+        <h3 class="blog-post-title">Top 10 Laptops of 2022</h3>
+        <p class="blog-post-body">Our best picks for various needs and budgets.</p>  
+      </div>
+    </article>
+  
+    <article class="blog-post blog-post-3">
+      <img class="blog-post-img" src="./assets/images/image-gaming-growth.jpg">
+      <div class="blog-post-content">
+        <h2 class="blog-post-number">03</h2>
+        <h3 class="blog-post-title">The Growth of Gaming</h3>
+        <p class="blog-post-body">How the pandemic has sparked fresh opportunities.</p>  
+      </div>
+    </article>  
+  </div>
+
+  <!--  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Jordan Patel</a>.
   </div>
+  -->
+
+  <script src="./js/script.js"></script>
 </body>
 </html>

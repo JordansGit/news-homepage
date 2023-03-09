@@ -1,0 +1,115 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body, h1, h2, h3, p {
+  margin: 0;
+}
+
+:root {
+  /* primary */ 
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  /* neutral */ 
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+/* ==================
+   Typography
+===================== */
+
+body { /* should I make this p or body tag. body by default is 16px, so changing the body will make my rem different */ 
+  /* font-size: 15px; */ 
+}
+
+/* ==================
+   Layout
+===================== */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+}
+
+/* Header */ 
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.feat-img-desktop {
+  display: none;
+}
+
+.feat-img-mobile {
+  display: block;
+}
+
+.blog-post-feat-img {
+  width: 100%;
+}
+
+/* Main */ 
+.read-more-btn {
+  display: block;
+}
+
+.blog-post {
+  display: flex;
+}
+
+.blog-post-img {
+  width: 100px;
+  height: 120px;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    height: 100vh;
+  }
+
+  .container {
+    max-width: 1000px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "header header header"
+      "main-img main-img sidebar"
+      "main-title main-body sidebar"
+      "info-1 info-2 info-3"
+  }
+
+  .feat-img-desktop {
+    display: block;
+  }
+  
+  .feat-img-mobile {
+    display: none;
+  }
+
+  header { grid-area: header; }
+  .feat-img-desktop { grid-area: main-img; }
+  .blog-post-feat-title { grid-area: main-title; }
+  .blog-post-body { grid-area: main-body; }
+  .sidebar { grid-area: sidebar; }
+  .blog-post-1 { grid-area: info-1; }
+  .blog-post-2 { grid-area: info-2; }
+  .blog-post-3 { grid-area: info-3; }
+}
