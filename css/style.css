@@ -133,13 +133,14 @@ nav {
 .read-more-btn {
   display: block;
   background: var(--soft-red);
-  padding: 10px 30px; 
+  padding: 10px 22px; 
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 700;
-  width: 200px;
+  width: 180px;
   margin-top: 30px;
+  font-size: 14px;
 }
 
 /* Sidebar */ 
@@ -151,8 +152,14 @@ nav {
 
 .sidebar-recent-post {
   border-bottom: 1px solid rgba(197, 198, 206, 0.4);
-  margin: 1.5rem 0;
-  padding-bottom: 1.5rem;
+  margin: 1.3rem 0;
+  padding-bottom: 1.3rem;
+}
+
+.sidebar-recent-post:last-child {
+  border-bottom: none;
+  padding-bottom: unset;
+  margin-bottom: 0;
 }
 
 /* Blog Post Content */ 
@@ -160,6 +167,15 @@ nav {
   display: flex;
   margin-bottom: 30px;
   gap: 20px;
+}
+.blog-post-feat-img {
+  margin: 0;
+}
+
+.blog-post-feat-title {
+  margin-top: auto;
+  margin-bottom: auto;
+  
 }
 
 .blog-post-title {
@@ -174,19 +190,20 @@ nav {
 
 
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
   body {
     height: 100vh;
   }
 
   .container {
-    max-width: 1000px;
+    max-width: 1100px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
       "header header header"
       "main-img main-img sidebar"
       "main-title main-body sidebar"
-      "info-1 info-2 info-3"
+      "info-1 info-2 info-3";
+    gap: 2rem;
   }
 
   .feat-img-desktop {
@@ -205,7 +222,49 @@ nav {
   .blog-post-1 { grid-area: info-1; }
   .blog-post-2 { grid-area: info-2; }
   .blog-post-3 { grid-area: info-3; }
+
+  .blog-post-feat-title {
+    width: unset;
+    font-size: 3.5rem;
+  }
+
+  .sidebar {
+    margin: unset;
+    /* padding: 0.5rem;*/ 
+  }
+
+  .sidebar-recent-post {
+    /* 
+    margin: 0.5rem 0;
+    padding-bottom: 0.5rem;*/
+  }  
+
+  .blog-post-body {
+    line-height: 1.6;
+  }
+
+  .blog-post {
+    margin-top: 30px;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+  nav {
+    display: block;
+  }
 }
+
+/* Notes
+.sidebar padding, 
+.blog-post-feat-img margin-bottom, 
+.blog-post-feat-title margin 
+ -> these are the reasons my grid isn't all tight gapped together. 
+ idk if it affects it much, try add gap and it might automatically fix itself
+ 
+
+
+*/ 
 
 
 /* Learning notes 
