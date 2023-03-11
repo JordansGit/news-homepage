@@ -26,8 +26,62 @@ body, h1, h2, h3, p {
    Typography
 ===================== */
 
-body { /* should I make this p or body tag. body by default is 16px, so changing the body will make my rem different */ 
-  /* font-size: 15px; */ 
+/* Font Colours */ 
+
+h1, .blog-post-title {
+  color: var(--very-dark-blue);
+}
+
+.sidebar-title {
+  color: var(--soft-orange);
+}
+
+.sidebar-post-title {
+  color: var(--off-white); 
+}
+
+.blog-post-body {
+  color: var(--dark-grayish-blue);
+}
+
+.blog-post-number, .sidebar-post-body {
+  color: var(--grayish-blue);
+}
+
+.read-more-btn {
+  color: var(--off-white);
+}
+
+/* Font Styles */ 
+
+.blog-post-feat-title {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  font-weight: 800;
+  width: 80vw;
+  line-height: 1;
+}
+
+.sidebar-title, .blog-post-number {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.sidebar-post-title {
+  line-height: 2;
+}
+
+.sidebar-post-body {
+  opacity: 0.9;
+}
+
+.blog-post-title {
+  font-weight: 800;
+  font-size: 1.1rem;
 }
 
 /* ==================
@@ -37,6 +91,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem 3rem 1rem;
 }
 
 .container {
@@ -47,6 +102,12 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+nav {
+  display: none;
 }
 
 .nav-list {
@@ -55,6 +116,7 @@ header {
   padding: 0;
 }
 
+/* Main */ 
 .feat-img-desktop {
   display: none;
 }
@@ -65,23 +127,54 @@ header {
 
 .blog-post-feat-img {
   width: 100%;
+  margin-bottom: 10px;
 }
 
-/* Main */ 
 .read-more-btn {
   display: block;
+  background: var(--soft-red);
+  padding: 10px 30px; 
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+  width: 200px;
+  margin-top: 30px;
 }
 
+/* Sidebar */ 
+.sidebar {
+  background: var(--very-dark-blue);
+  margin: 60px 0;
+  padding: 25px;
+}
+
+.sidebar-recent-post {
+  border-bottom: 1px solid rgba(197, 198, 206, 0.4);
+  margin: 1.5rem 0;
+  padding-bottom: 1.5rem;
+}
+
+/* Blog Post Content */ 
 .blog-post {
   display: flex;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.blog-post-title {
+  margin: 10px 0;
 }
 
 .blog-post-img {
   width: 100px;
-  height: 120px;
+  max-height: 127px;
 }
 
-@media screen and (min-width: 600px) {
+
+
+
+@media screen and (min-width: 1000px) {
   body {
     height: 100vh;
   }
@@ -113,3 +206,13 @@ header {
   .blog-post-2 { grid-area: info-2; }
   .blog-post-3 { grid-area: info-3; }
 }
+
+
+/* Learning notes 
+
+I would say for next time since it said body 15px (paragraph), just put body font size to 15px and then use rem to resize all other fonts based off that. 
+If I was to do it now, I would have to adjust the font size for everything i've set slightly. 
+
+
+
+*/ 
