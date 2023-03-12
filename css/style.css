@@ -168,15 +168,6 @@ nav {
   margin-bottom: 30px;
   gap: 20px;
 }
-.blog-post-feat-img {
-  margin: 0;
-}
-
-.blog-post-feat-title {
-  margin-top: auto;
-  margin-bottom: auto;
-  
-}
 
 .blog-post-title {
   margin: 10px 0;
@@ -185,12 +176,100 @@ nav {
 .blog-post-img {
   width: 100px;
   max-height: 127px;
+  align-self: flex-end;
+}
+
+
+.blog-post-content {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 600px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "header header"
+      "main-img main-img"
+      "main-title sidebar"
+      "main-body sidebar"
+      "info-1 sidebar"
+      "info-2 info-3";
+    gap: 2rem;
+  }
+
+  header { grid-area: header; }
+  .blog-post-feat-img { grid-area: main-img; }
+  .blog-post-feat-title { grid-area: main-title; }
+  .blog-post-body { grid-area: main-body; }
+  .sidebar { grid-area: sidebar; }
+  .blog-post-1 { grid-area: info-1; }
+  .blog-post-2 { grid-area: info-2; }
+  .blog-post-3 { grid-area: info-3; }
+
+  /* Header */ 
+  
+  .mobile-menu {
+    display: none;
+  }
+  nav {
+    display: block;
+  }
+
+  /* Main */ 
+
+  .feat-img-desktop {
+    display: block;
+  }
+  
+  .feat-img-mobile {
+    display: none;
+  }
+
+  .blog-post-feat-title {
+    width: unset;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .blog-post-feat-img {
+    margin: 0;
+  }
+
+  /* Sidebar */ 
+
+  .sidebar {
+    margin: unset;
+  }
+
+  /* Blog Post Content */ 
+
+  .blog-post {
+    margin-top: 20px;
+  }
+
+  .blog-post-content {
+    justify-content: space-between;
+  }
+
+  .blog-post-body {
+    line-height: 1.6;
+  }
 }
 
 
 
+@media screen and (min-width: 600px) and (max-width: 1060px) {
+  .blog-post-1 {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+}
 
-@media screen and (min-width: 800px) {
+
+
+@media screen and (min-width: 1060px) {
   body {
     height: 100vh;
   }
@@ -203,68 +282,17 @@ nav {
       "main-img main-img sidebar"
       "main-title main-body sidebar"
       "info-1 info-2 info-3";
-    gap: 2rem;
   }
-
-  .feat-img-desktop {
-    display: block;
-  }
-  
-  .feat-img-mobile {
-    display: none;
-  }
-
-  header { grid-area: header; }
-  .feat-img-desktop { grid-area: main-img; }
-  .blog-post-feat-title { grid-area: main-title; }
-  .blog-post-body { grid-area: main-body; }
-  .sidebar { grid-area: sidebar; }
-  .blog-post-1 { grid-area: info-1; }
-  .blog-post-2 { grid-area: info-2; }
-  .blog-post-3 { grid-area: info-3; }
 
   .blog-post-feat-title {
-    width: unset;
     font-size: 3.5rem;
-  }
-
-  .sidebar {
-    margin: unset;
-    /* padding: 0.5rem;*/ 
-  }
-
-  .sidebar-recent-post {
-    /* 
-    margin: 0.5rem 0;
-    padding-bottom: 0.5rem;*/
-  }  
-
-  .blog-post-body {
-    line-height: 1.6;
   }
 
   .blog-post {
     margin-top: 30px;
   }
-
-  .mobile-menu {
-    display: none;
-  }
-  nav {
-    display: block;
-  }
 }
 
-/* Notes
-.sidebar padding, 
-.blog-post-feat-img margin-bottom, 
-.blog-post-feat-title margin 
- -> these are the reasons my grid isn't all tight gapped together. 
- idk if it affects it much, try add gap and it might automatically fix itself
- 
-
-
-*/ 
 
 
 /* Learning notes 
@@ -272,6 +300,6 @@ nav {
 I would say for next time since it said body 15px (paragraph), just put body font size to 15px and then use rem to resize all other fonts based off that. 
 If I was to do it now, I would have to adjust the font size for everything i've set slightly. 
 
-
+also 1 of the reasons I like pixels is because on chrome you can use the scroll wheel to adjust it to the precise width I want. Just use rems and decimal points e.g. 2.1, 2.2, ...
 
 */ 
