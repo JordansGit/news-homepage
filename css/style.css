@@ -28,7 +28,7 @@ body, h1, h2, h3, p {
 
 /* Font Colours */ 
 
-h1, .blog-post-title {
+h1, .blog-post-title, .nav-item a {
   color: var(--very-dark-blue);
 }
 
@@ -52,7 +52,17 @@ h1, .blog-post-title {
   color: var(--off-white);
 }
 
+@media screen and (min-width: 600px) {
+  .nav-item a {
+    color: var(--dark-grayish-blue);
+  }
+}
+
 /* Font Styles */ 
+
+.nav-item a {
+  text-decoration: none;
+}
 
 .blog-post-feat-title {
   font-size: 2.5rem;
@@ -87,6 +97,7 @@ p {
 /* ==================
    Layout
 ===================== */
+
 body {
   display: flex;
   justify-content: center;
@@ -106,14 +117,76 @@ header {
   padding: 2rem 0;
 }
 
+.mobile-menu {
+  cursor: pointer;
+  z-index: 3;
+  padding: 0.5rem 0;
+}
+
 nav {
-  display: none;
+  /* display: none; */ 
+  position: fixed;
+
+  background: white;
+  width: 60vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  left: 100%;
+  transform: translateX(0);
+  transition: transform 250ms;
+}
+
+.nav-open-nav {
+  transform: translateX(-100%);
+}
+
+.nav-open-body {}
+
+.nav-open-body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,26, 0.6);
+  z-index: 2;
+}
+
+.close-btn {
+  position: absolute;
+  padding: 1.5rem;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  cursor: pointer;
 }
 
 .nav-list {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
+  height: 100%;
+}
+
+.nav-item a:hover {
+  opacity: 0.8;
+}
+
+.nav-list {
+  margin-top: 10rem; /* ------------ */
+  margin-left: 1.5rem; /* ------------ */
+}
+
+.nav-item {
+  margin: 0.75rem 0; /* ------------ */ 
+}
+
+.nav-item a {
+  padding: 0.5rem 0; /* ------------ */ /* does nothing visually, just adds extra room for hover effect */
 }
 
 /* Main */ 
@@ -141,6 +214,10 @@ nav {
   width: 180px;
   margin-top: 30px;
   font-size: 14px;
+}
+
+.read-more-btn:hover {
+  background: #ee3b2b;
 }
 
 /* Sidebar */ 
@@ -188,6 +265,7 @@ nav {
 
 @media screen and (min-width: 600px) {
   .container {
+    max-width: 850px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
       "header header"
@@ -210,11 +288,26 @@ nav {
 
   /* Header */ 
   
+  header {
+    padding-bottom: 0;
+  }
+
   .mobile-menu {
     display: none;
   }
+
   nav {
     display: block;
+    position: relative;
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+  
+  .nav-item {
+    margin-left: 2rem;
   }
 
   /* Main */ 
@@ -297,9 +390,14 @@ nav {
 
 /* Learning notes 
 
+1) 
 I would say for next time since it said body 15px (paragraph), just put body font size to 15px and then use rem to resize all other fonts based off that. 
 If I was to do it now, I would have to adjust the font size for everything i've set slightly. 
 
 also 1 of the reasons I like pixels is because on chrome you can use the scroll wheel to adjust it to the precise width I want. Just use rems and decimal points e.g. 2.1, 2.2, ...
+
+
+2) the tinted bg with ::before, 
+this adds the bg affect when mobile menu is open, we use this instead of just changing the bg of body because it adds this tint effect to every element, the img element, the text. 
 
 */ 
