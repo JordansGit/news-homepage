@@ -177,16 +177,16 @@ nav {
 }
 
 .nav-list {
-  margin-top: 10rem; /* ------------ */
-  margin-left: 1.5rem; /* ------------ */
+  margin-top: 10rem; 
+  margin-left: 1.5rem; 
 }
 
 .nav-item {
-  margin: 0.75rem 0; /* ------------ */ 
+  margin: 0.75rem 0;
 }
 
 .nav-item a {
-  padding: 0.5rem 0; /* ------------ */ /* does nothing visually, just adds extra room for hover effect */
+  padding: 0.5rem 0; /* does nothing visually, just adds extra room for hover effect */
 }
 
 /* Main */ 
@@ -298,16 +298,29 @@ nav {
 
   nav {
     display: block;
-    position: relative;
+    position: unset;
     transform: translateX(0);
+    width: unset;
+  }
+
+  .close-btn {
+    display: none;
   }
 
   .nav-list {
     flex-direction: row;
+    margin-top: unset;
+    margin-left: unset;
+    height: unset;
   }
   
   .nav-item {
+    margin-top: unset;
+    margin-bottom: unset;
     margin-left: 2rem;
+  }
+  .nav-item a {
+    padding: unset; 
   }
 
   /* Main */ 
